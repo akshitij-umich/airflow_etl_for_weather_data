@@ -1,0 +1,12 @@
+version: '3'
+services:
+  sleek-airflow:
+    image: weatherdataetlpipelineusingapacheairflowandsqlserver:latest
+    volumes:
+      - ./airflow:/opt/airflow
+
+    ports:
+      - "8080:8080"
+    environment:
+      - WEATHER_API_KEY=bc1e7c071c32c209bc4350adee02b8a0
+    command: airflow standalone
